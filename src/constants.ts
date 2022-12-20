@@ -13,11 +13,11 @@ export const commands = {
     },
     parallel: {
         label: "parallel",
-        description: "the the command on all dependencies in parallel",
+        description: "executes the command on all dependencies in parallel",
     },
     sequential: {
         label: "sequential",
-        description: "the the command on all dependencies sequentially",
+        description: "executes the command on all dependencies sequentially",
     },
     max: {
         label: "max",
