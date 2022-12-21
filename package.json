@@ -1,6 +1,6 @@
 {
     "name": "workspaces-run-script",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "Run a script on the packages in a mono-repo.",
     "homepage": "https://github.com/ncochard/workspaces-run-script#readme",
     "bugs": {
