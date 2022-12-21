@@ -1,3 +1,4 @@
+import { ScriptFailed } from "./errors";
 import { CommandOptions, Mode, SequentialScript } from "./types";
 
 interface State {
@@ -100,7 +101,7 @@ export async function executeScripts(scripts: SequentialScript[], command: Comma
                     await triggerNextScripts();
                 } catch (error) {
                     onFailure(state)(s.name);
-                    throw error;
+                    throw new ScriptFailed(s.name);
                 }
             })
         );
