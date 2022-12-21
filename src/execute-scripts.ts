@@ -97,10 +97,11 @@ export async function executeScripts(scripts: SequentialScript[], command: Comma
                     onStart(state)(s.name);
                     await s.execute();
                     onSuccess(state)(s.name);
+                    await triggerNextScripts();
                 } catch (error) {
                     onFailure(state)(s.name);
+                    throw error;
                 }
-                await triggerNextScripts();
             })
         );
     }
