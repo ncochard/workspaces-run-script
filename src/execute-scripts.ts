@@ -101,7 +101,7 @@ export async function executeScripts(scripts: SequentialScript[], command: Comma
                     await triggerNextScripts();
                 } catch (error) {
                     onFailure(state)(s.name);
-                    throw new ScriptFailed(s.name);
+                    throw new ScriptFailed(`yarn workspace ${s.name} ${command.script}`);
                 }
             })
         );

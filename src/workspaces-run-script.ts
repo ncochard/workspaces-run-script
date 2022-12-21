@@ -1,5 +1,5 @@
 import { ScriptFailed } from "./errors";
-import { error, prefixed } from "./feedback";
+import { error } from "./feedback";
 import { main } from "./main";
 
 ((): void => {
@@ -7,7 +7,7 @@ import { main } from "./main";
         main();
     } catch (e) {
         if (error instanceof ScriptFailed) {
-            prefixed(error.getScript(), `ERROR!`);
+            error(`ERROR: ${error.getScript()}`);
         } else {
             error("Something went wrong!");
             error(e);
