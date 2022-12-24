@@ -16,10 +16,9 @@
     "scripts": {
         "clean": "npx rimraf dist .cache",
         "purge": "npx rimraf dist .cache node_modules",
-        "build": "npm-run-all --parallel --print-label --print-name tsc",
-        "all": "npm-run-all --parallel --print-label --print-name lint tsc test",
+        "build": "tsc",
+        "all": "npm-run-all --parallel --print-label --print-name lint build test",
         "lint": "eslint ./src/ --ext ts,json --quiet --fix",
-        "tsc": "tsc",
         "test": "jest"
     },
     "dependencies": {
